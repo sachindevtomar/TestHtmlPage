@@ -6,6 +6,7 @@
 <body>
     <button id="openNewTabBtn">Open Blob URL in New Tab</button>
 	<a id ="a1"> Download Text File</a>
+    <button id="openNewTabBtn1">Open Myntra</button>
     <script>
         document.getElementById('openNewTabBtn').addEventListener('click', function () {
             const data = "Some good old plain text";
@@ -14,6 +15,11 @@
 			console.log(url);
 			window.open(url, "_blank");
         });
+document.getElementById('openNewTabBtn1').addEventListener('click', function () {
+            
+			window.open("https://www.myntra.com", "_blank");
+        });
+	    
 		const a = document.getElementById("a1");
 		const blob = new Blob(["your data"]);
 		a.href = URL.createObjectURL(blob);
