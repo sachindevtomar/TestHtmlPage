@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Open Blob URL in New Tab</title>
+</head>
+<body>
+    <button id="openNewTabBtn">Open Blob URL in New Tab</button>
+	<a id ="a1"> Download Text File</a>
+    <script>
+        document.getElementById('openNewTabBtn').addEventListener('click', function () {
+            const data = "Some good old plain text";
+			const blob = new Blob([data], {type: "text/plain"});
+			const url = URL.createObjectURL(blob);
+			console.log(url);
+			window.open(url, "_blank");
+        });
+		const a = document.getElementById("a1");
+		const blob = new Blob(["your data"]);
+		a.href = URL.createObjectURL(blob);
+    </script>
+</body>
+</html>
